@@ -107,10 +107,6 @@ $(function setHourColor () {
     }
 });
   
-$(function taskPusher () {
-
-});
-
 // TODO: Add a listener for click events on the save button. This code should
     // use the id in the containing time-block as a key to save the user input in
     // local storage. HINT: What does `this` reference in the click listener
@@ -125,7 +121,7 @@ $(function taskPusher () {
 
 
 
-var scheduledTasks = JSON.parse(localStorage.getItem("tasks")) || []   
+var scheduledTasks = JSON.parse(localStorage.getItem("tasks"))
 
 saveButton.on("click", function() {   
     var hourlyTasks = {
@@ -143,14 +139,17 @@ saveButton.on("click", function() {
     localStorage.setItem('tasks', JSON.stringify(hourlyTasks))
     });
   
-var returnTask = JSON.parse(localStorage.getItem('tasks'))
 
-hour09TextInput.textContent = returnTask.hour09SavedTask;
-hour10TextInput.textContent = returnTask.hour10SavedTask;
-hour11TextInput.textContent = returnTask.hour11SavedTask;
-hour12TextInput.textContent = returnTask.hour12SavedTask;
-hour13TextInput.textContent = returnTask.hour13SavedTask;
-hour14TextInput.textContent = returnTask.hour14SavedTask;
-hour15TextInput.textContent = returnTask.hour15SavedTask;
-hour16TextInput.textContent = returnTask.hour16SavedTask;
-hour17TextInput.textContent = returnTask.hour17SavedTask;
+$(function taskPusher () {
+    var returnTask = JSON.parse(localStorage.getItem('tasks'))
+        hour09TextInput.textContent = returnTask.hour09SavedTask;
+        hour10TextInput.textContent = returnTask.hour10SavedTask;
+        hour11TextInput.textContent = returnTask.hour11SavedTask;
+        hour12TextInput.textContent = returnTask.hour12SavedTask;
+        hour13TextInput.textContent = returnTask.hour13SavedTask;
+        hour14TextInput.textContent = returnTask.hour14SavedTask;
+        hour15TextInput.textContent = returnTask.hour15SavedTask;
+        hour16TextInput.textContent = returnTask.hour16SavedTask;
+        hour17TextInput.textContent = returnTask.hour17SavedTask;
+});
+
